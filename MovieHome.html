@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        body{
+            margin: 0%;
+        }
+     #container1{
+        width:100%;
+        height:60px;
+        background-color: black;
+        display:flex;
+        margin:auto;
+      }
+      #container1 > div{
+          display:flex;
+          margin: auto;
+      }
+      #container1 > div >div{
+          width:100px;
+          height:30px;
+          
+          margin:auto;
+          display:flex;
+          text-align: center;
+          padding:5px;
+          margin-left: 20px;
+          font-size:20px;
+      }
+      a{
+          text-decoration: none;
+          color: white;
+      }
+            #container{
+            height:500px;
+            width:100%;
+            margin: auto;
+            background: #010714;
+            /* background-image: url(https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260); */
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;  
+            border:1px solid ;
+        
+            }
+            #masai{
+            color:white;
+            font-size: 40px;
+            width:50%;
+            margin:50px 40%;
+            font-family: Arial, Helvetica, sans-serif;
+          
+         
+            }
+             #search {
+            width:90%;
+            height:48px;
+            padding:0px;
+           border:none;
+            margin:auto;
+            font-size: 20px; 
+            
+            } 
+            .elementsContainer{
+            border:1px solid #dcdcdc;
+            width:50%;
+            background-color: white;
+            margin-top: 20px;
+            margin: auto;
+            border-radius: 25px;
+            margin-bottom: 0px;
+           
+            
+            }
+
+            th:nth-child(2){
+                width: 20%;
+            }
+            #textCon{
+                margin: auto;
+            }
+            #user{
+                display:grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-gap: 5%;
+               
+            }
+            #user > div{
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                padding:5%;
+                overflow: hidden;
+               
+            }
+     
+            #maindiv{
+                width: 100%;
+                min-height: 500px;
+                
+                border:1px solid black;
+                margin: auto;
+                background: rgb(2, 1, 7);
+                /* background: linear-gradient(87deg, rgba(2,0,36,1) 40%, rgba(14,14,92,1) 63%, rgba(77,94,97,1) 100%);      */
+                 }
+            #childDiv{
+                width:60%;
+                height:400px;
+                padding:20px;
+              
+                border-radius: 10px;
+                margin:auto;
+                display:flex;
+                color:white;
+                margin-top:50px;
+                background: rgb(0, 0, 0);
+                background: linear-gradient(87deg, rgba(2,0,36,1) 4%, rgb(100, 83, 37) 63%, rgba(77,94,97,1) 100%);
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+                 }
+
+                 #childDiv> div:nth-child(1){
+                     width:500px;
+                 }
+                 #childDiv> div:nth-child(1) > img{
+                     height:100%;
+                     width:100%;
+                     border-radius: 5px; 
+                }
+                #childDiv> div:nth-child(2){
+                    width:100%;
+                    margin-left:20px;
+                    line-height: 30px;
+                }
+                #Watch{
+                    width:150px;
+                    height:35px;
+                    border:none;
+                    background-color: rgb(177, 124, 45);
+                    color:white;
+                    border-radius: 5px;
+
+                }
+                #gifImage{
+                    width:100%;
+                    height:100%;
+                }
+                #searchDiv{
+                  
+                    margin-top: 1px;
+                    height:55px;
+                    
+                }
+                
+
+                #show{
+                   
+                    width:50%;
+                    height:300px;
+                    background-color: white;
+                    margin: auto;
+                    border: solid 1px black;
+                    border-top: none;
+                    overflow: scroll;
+                }
+                #show > div{
+                    width:100%;
+                    display:flex;
+
+                }
+            
+
+                #show2{
+                    width: 10%;
+                    
+                }
+                #btn1{
+                    width:85%;
+                    border:none;
+                    background-color: black;
+                    color:white;
+                    text-align: right;
+
+                }
+                #btn1 > p{
+                    text-align: left;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-size: 20px;
+                }
+                #poster_div{
+                    width:15%;
+                    height:60px;
+                }
+                #image{
+                    width:100%;
+                    height:100%;
+                }
+                #scroll{
+                    background-color: black;
+                }
+                #marqueeDiv{
+                    display: flex;
+                    width:100%;
+                    height:50px;
+                    background-color: black;
+                }
+                #images{
+                    width:60px;
+                    height:100%;
+                }
+
+                #movies2{
+                    display: flex;
+                    width:300px;
+                    border:1px solid black;
+                    padding: 5px;
+                }
+        </style>
+    </head>
+    <body>
+        <div id = "container1">
+            <div>
+                <div><a href = "trending.html">Trending</a></div>
+                <div><a href = "index.html">Login</a></div>
+                <div><a href = "Resister.html">SignUp</a></div>   
+            </div>
+          </div>
+          <div id = "scroll">
+            <marquee scrollamount="10" scroldelay="5" direction="left" onmouseover="this.stop()" onmouseout="this.start()" behavior="repeat">
+             <div id = "marqueeDiv">
+                
+             </div>
+            </marquee>
+          </div>
+        <div id = "container">
+          <div> <h1 id = "masai">Masai Collection</h1></div>
+            <div id = "searchDiv">
+                <table class = "elementsContainer">
+                    <tr>
+                        <th>
+                            <input type ="text" placeholder = "Search Movies..." id = "search" oninput = "searchMoviesEle(main, 1000)">
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div id = "show1"></div>
+         </div>
+        <div id = "user"></div>
+    </body>
+</html>
+
+<script>
+
+    let timerId;
+        let user_div = document.getElementById("user")
+        user_div.setAttribute("id", "maindiv")
+
+        let show = document.getElementById("show1");
+
+        let show1 = document.createElement("div");
+        show1.setAttribute("id","show")
+
+async function searchMoviesEle(func, delay){
+    if(timerId){
+        clearTimeout(timerId);
+    }
+
+    timerId = setTimeout(function(){
+        func()
+    },delay)
+}
+
+
+async function main(){
+    let name = document.getElementById("search").value;
+
+    if(name.length <= 2){
+        return false;
+    }
+
+    console.log("fired");
+    let m = await getUsers(name);
+
+    appendMovies(m)
+
+  
+}
+
+async function appendMovies(m){
+    show.innerHTML = null;
+    show1.innerHTML = null;
+    if(m === undefined){
+        return false;
+    }
+    m.forEach((elem) => {
+        let div = document.createElement("div");
+        div.setAttribute("id", "show2")
+        let div2 = document.createElement("div")
+        div2.setAttribute("id","poster_div")
+        let img = document.createElement("img")
+        img.setAttribute("id","image")
+        img.src = elem.Poster;
+        let p = document.createElement("p");
+        let btn = document.createElement("button")
+        btn.setAttribute("id", "btn1")
+        btn.addEventListener("click", function(){
+ 
+            appendUsers(elem)
+            show.innerHTML = null;
+        })
+        p.innerText = elem.Title;
+        btn.append(p)
+         div2.append(img)
+        div.append(div2,btn)
+       
+        show1.append(div)
+        show.append(show1)
+
+
+    });
+}
+
+
+
+    async function getUsers(name){
+
+        try{
+            
+        let res = await fetch(`https://www.omdbapi.com/?s=${name}&apikey=27ce9455`)
+
+
+        let data = await res.json()
+
+        console.log(data)
+        if(data.Response === "True"){
+       
+            return data.Search;
+            show.innerHTML = null;
+
+        }
+        else{
+            wrongInput()
+        }
+        
+        }
+
+        catch(err){
+            console.log("This error might be because of spelling mistakes "+ err)
+        }
+    }
+
+function appendUsers(arr)
+    {
+        
+           user_div.innerHTML = null;
+           let div = document.createElement('div');
+            div.setAttribute("id", "childDiv");
+            
+            let div1 = document.createElement('div');
+            div1.setAttribute("id","childDiv1");
+
+            let div2 = document.createElement('div');
+            div2.setAttribute("id","childDiv2");
+
+            let image = document.createElement('img');
+            image.src = arr.Poster;
+
+            let name = document.createElement('h3');
+            name.innerText = "Title : " + arr.Title;
+            
+
+            let released = document.createElement('p');
+            released.innerText = "Released Year : " +arr.Year;
+
+
+            let Actors = document.createElement('p');
+            Actors.innerText = "Type : "+ arr.Type;
+
+
+            let imdbRating = document.createElement('h4');
+            imdbRating.innerText = "IMDb-ID : "+arr.imdbID;
+
+            let btn = document.createElement("button")
+            btn.setAttribute("id","Watch")
+            btn.textContent = "Watch Now";
+            console.log(imdbRating)
+            console.log(typeof(imdbRating))
+            div1.append(image);
+            div2.append(name,released,imdbRating,btn)
+
+            div.append(div1,div2)
+            user_div.append(div)
+
+
+        }
+
+        function wrongInput(){
+            show.innerHTML = null;
+            let div = document.createElement('div');
+            div.setAttribute("id", "childDiv");
+
+            let image = document.createElement('img');
+            image.setAttribute("id", "gifImage");
+            image.src = "https://c.tenor.com/IHdlTRsmcS4AAAAM/404.gif"
+
+            div.append(image)
+            user_div.append(div)
+
+        }
+
+
+
+
+
+
+ let movies_div1 = document.getElementById("marqueeDiv")
+
+ searchMoviesElement()
+async function searchMoviesElement() {
+  movies_div1.innerHTML = null;
+
+  let response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=fd56808fa965c656d11ce4fba57a4543`);
+
+  let data = await response.json();
+  // console.log(data)
+  // console.log(data.results[0].poster_path)
+//   return data.Search;
+showMovie(data.results)
+
+}
+
+function showMovie(arr){
+ arr.forEach(elem => {
+    
+let movies_div2 = document.createElement("div");
+movies_div2.setAttribute("id","movies2")
+let div = document.createElement("div");
+
+let div1 = document.createElement("div");
+
+let img = document.createElement("img")
+img.setAttribute("id","images")
+img.src = `https://image.tmdb.org/t/p/original${elem.poster_path}`;
+
+let name = document.createElement("h3")
+name.textContent = elem.title;
+
+div.append(img)
+// div1.append(name)
+movies_div2.append(div,div1)
+movies_div1.append(movies_div2)
+  
+    });
+
+}
+</script>

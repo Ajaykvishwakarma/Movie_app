@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trending</title>
+  </head>
+
+  <style>
+    *{
+      background-color: black;
+    }
+    #container{
+    width:100%;
+    height:60px;
+   
+    background-color: black;
+    display:flex;
+    margin:auto;
+      }
+      #container > div{
+          display:flex;
+          margin: auto;
+      }
+      #container > div >div{
+          width:100px;
+          height:30px;
+          
+          margin:auto;
+          display:flex;
+          text-align: center;
+          padding:5px;
+          margin-left: 20px;
+          font-size:20px;
+      }
+      a{
+          text-decoration: none;
+          color: white;
+      }
+
+    input {
+      width: 200px;
+    }
+    #movies1 {
+      min-height: 400px;
+      width: 100%;
+      border: solid 1px black;
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap:10px;
+      
+    }
+    #movies2{
+      margin-top:10px;
+      border-radius: 5px;
+      background-color: rgb(112, 108, 108);
+      color: white;
+      height:400px;
+   
+      padding:10px;
+    }
+
+    button{
+      background-color: rgb(180, 138, 74);
+      height:40px;
+      width:200px;
+      margin: auto;
+      color:white;
+      border:none;
+      border-radius: 10px;
+    }
+    #movies2 > div:nth-child(2){
+      height:100px;
+      line-height: 20px;
+      background-color: rgb(112, 108, 108);
+      margin-top: 0px;
+      width:100%;
+      
+      text-align: center;
+    }
+    h3{
+      background-color: rgb(112, 108, 108);
+   
+    }
+    #movies2 > div:nth-child(2) > p{
+      background-color: rgb(112, 108, 108);
+      width:100%;
+      text-align: center;
+      margin-top:1px;
+
+    }
+    #images{
+        height:200px;
+        width:100%;
+        border-radius: 10px;
+    }
+  </style>
+  <body>
+    <div id = "container">
+      <div>
+      <div><a href = "MovieHome.html">Home</a></div>
+      
+   
+    </div>
+    </div>
+      <div id="movies1"></div>
+   
+    </body>
+</html>
+<script>
+var timerId;
+
+ let movies_div = document.getElementById("movies1")
+
+ searchMoviesEle()
+async function searchMoviesEle() {
+  movies_div.innerHTML = null;
+
+  let response = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=fd56808fa965c656d11ce4fba57a4543`);
+
+  let data = await response.json();
+  // console.log(data)
+  // console.log(data.results[0].poster_path)
+//   return data.Search;
+showMovies(data.results)
+
+}
+
+function showMovies(arr){
+ arr.forEach(elem => {
+    
+let movies_div2 = document.createElement("div");
+movies_div2.setAttribute("id","movies2")
+let div = document.createElement("div");
+
+let div1 = document.createElement("div");
+
+let img = document.createElement("img")
+img.setAttribute("id","images")
+img.src = `https://image.tmdb.org/t/p/original${elem.poster_path}`;
+
+let name = document.createElement("h3")
+name.textContent = "Name : "+elem.title;
+
+let vote = document.createElement("p")
+vote.textContent = "Vote Avg : "+elem.vote_average
+
+let release = document.createElement("p");
+release.textContent = "Date : "+elem.release_date; 
+
+let btn = document.createElement("button");
+btn.textContent = "Watch Now!"
+div.append(img)
+div1.append(name,vote,release,btn)
+movies_div2.append(div,div1)
+movies_div.append(movies_div2)
+  
+    });
+
+}
+
+</script>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create A Account</title>
+        <style>
+            body{
+                margin: 0%;
+                padding: 0%;
+            }
+      #container1{
+        width:100%;
+        height:60px;
+        background-color: black;
+        display:flex;
+        margin:auto;
+      }
+      #container1 > div{
+          display:flex;
+          margin: auto;
+      }
+      #container1 > div >div{
+          width:100px;
+          height:30px;
+          
+          margin:auto;
+          display:flex;
+          text-align: center;
+          padding:5px;
+          margin-left: 20px;
+          font-size:20px;
+      }
+      #container1 > div >div > a{
+          text-decoration: none;
+          color: white;
+      }
+
+      #container2 {
+          width:100%;
+          margin: auto;
+          height:60px;
+          /* background-color: black; */
+           background: rgb(2, 1, 7);
+           background: linear-gradient(87deg, rgba(2,0,36,1) 40%, rgba(14,14,92,1) 63%, rgba(77,94,97,1) 100%);
+           color:rgba(228, 206, 15, 0.829);
+           
+          
+      }
+      #container2 > h1{
+      
+          width:50%;
+          margin: auto;
+          text-align: center;
+          font-family: Arial, Helvetica, sans-serif;
+          padding:6px;
+
+      }
+
+
+      #container{
+          width:40%;
+          height:600px;
+         
+          margin: auto;
+          margin-top:20px;
+          padding: 8px;
+          border-radius: 10px;
+          background-color: rgb(236, 235, 241);
+          color:white;
+      }
+      #scroll{
+          width:100%;
+          height:50px;
+        
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          background-color: rgb(66, 87, 94);
+
+      }
+      marquee > div{
+          display: flex;
+          font-family: Arial, Helvetica, sans-serif;
+         
+
+      }
+
+      #container > div:nth-child(2){
+         
+          height:90%;
+          width:100%;
+          margin: auto;
+          text-align: center;
+          background-color: rgb(94, 125, 138);
+          
+      }
+      label{
+         
+          font-size: 20px;
+          
+          font-family: Arial, Helvetica, sans-serif;
+          
+
+      }
+      input{
+          width:80%;
+          height:25px;
+          border-radius: 5px;
+          border: 1px solid gray;
+         
+      }
+      #sub{
+          color:white;
+          width:60%;
+          height: 40px;
+          background-color: rgb(125, 151, 230);
+      }
+      #sub:hover{
+          cursor: pointer;
+          background-color: blue;
+
+      }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id = "container1">
+            <div>
+                <div><a href = "index.html">Login</a></div>
+                <div><a href = "resister.html">SignUp</a></div>
+            </div>
+          </div>
+
+          <div id = "container2"><h1>Masai Collection</h1></div>
+        <div id = "container">
+             <div id = "scroll">
+                <marquee scrollamount="10" scroldelay="5" direction="left" onmouseover="this.stop()" onmouseout="this.start()" behavior="...">
+                <div>
+                    <h3>Register Please </h3>
+              
+                </div>
+                </marquee>
+              </div>
+            <div>
+                <form onsubmit="Resister(event)">
+                    <br>
+                    <label>Name</label><br>
+                    <input type = "text" id = "name"/>
+                    <br><br> <label>Email</label><br>
+                    <input type = "email" id = "email"/>
+                    <br><br> <label>User-Name</label><br>
+                    <input type = "text"  id = "username"/>
+                    <br><br><label>Password</label><br>
+                    <input type = "password" id = "password"/>
+                    <br><br>  <label>Mobile</label><br>
+                    <input type = "number" id = "mobile"/>
+                    <br><br> <label>Description</label><br>
+                    <input type= "text" id = "description"/>
+                    <br><br><br>
+                    <input type = "submit" id = "sub"/>
+                </form>
+            </div>
+            <div></div>
+        </div>
+    </body>
+</html>
+<script>
+async function Resister(e)
+   {
+       e.preventDefault()
+       try{
+
+         var register_data = {
+           name : document.getElementById("name").value,
+           email : document.getElementById("email").value,
+           password : document.getElementById("password").value,
+           username : document.getElementById("username").value,
+           mobile : document.getElementById("mobile").value,
+           description : document.getElementById("description").value,
+           
+       }
+
+
+       register_data = JSON.stringify(register_data)
+       console.log(register_data )
+       }catch(error)
+       {
+           console.log(error)
+       }
+
+
+       let reg_api = `https://masai-api-mocker.herokuapp.com/auth/register`;
+
+       let response = await fetch(reg_api, {
+          method : "POST",
+          body:register_data,
+          headers: {
+              "Content-Type" : "application/json"
+          },
+
+
+       })
+       let data = await response.json();
+        console.log(data)
+
+           if(data.error == true)
+           {
+               alert(data.message)
+            
+           }
+           else{
+
+            alert(data.message)
+            window.location.href = "index.html"
+           }
+      
+   }
+
+</script>
